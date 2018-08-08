@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 833956ef09183e146b304c629559cd9e
+timeCreated: 1509777638
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: body
+    100002: container
+    100004: flatBed
+    100006: tire
+    100008: tire_10
+    100010: tire_11
+    100012: tire_12
+    100014: tire_13
+    100016: tire_14
+    100018: tire_15
+    100020: tire_16
+    100022: tire_17
+    100024: tire_18
+    100026: tire_2
+    100028: tire_3
+    100030: tire_4
+    100032: tire_5
+    100034: tire_6
+    100036: tire_7
+    100038: tire_8
+    100040: tire_9
+    100042: //RootNode
+    100044: carborator
+    100046: carborator_2
+    100048: exhaust
+    100050: exhaust_2
+    400000: body
+    400002: container
+    400004: flatBed
+    400006: tire
+    400008: tire_10
+    400010: tire_11
+    400012: tire_12
+    400014: tire_13
+    400016: tire_14
+    400018: tire_15
+    400020: tire_16
+    400022: tire_17
+    400024: tire_18
+    400026: tire_2
+    400028: tire_3
+    400030: tire_4
+    400032: tire_5
+    400034: tire_6
+    400036: tire_7
+    400038: tire_8
+    400040: tire_9
+    400042: //RootNode
+    400044: carborator
+    400046: carborator_2
+    400048: exhaust
+    400050: exhaust_2
+    2300000: body
+    2300002: container
+    2300004: flatBed
+    2300006: tire
+    2300008: tire_10
+    2300010: tire_11
+    2300012: tire_12
+    2300014: tire_13
+    2300016: tire_14
+    2300018: tire_15
+    2300020: tire_16
+    2300022: tire_17
+    2300024: tire_18
+    2300026: tire_2
+    2300028: tire_3
+    2300030: tire_4
+    2300032: tire_5
+    2300034: tire_6
+    2300036: tire_7
+    2300038: tire_8
+    2300040: tire_9
+    2300042: carborator
+    2300044: carborator_2
+    2300046: exhaust
+    2300048: exhaust_2
+    3300000: body
+    3300002: container
+    3300004: flatBed
+    3300006: tire
+    3300008: tire_10
+    3300010: tire_11
+    3300012: tire_12
+    3300014: tire_13
+    3300016: tire_14
+    3300018: tire_15
+    3300020: tire_16
+    3300022: tire_17
+    3300024: tire_18
+    3300026: tire_2
+    3300028: tire_3
+    3300030: tire_4
+    3300032: tire_5
+    3300034: tire_6
+    3300036: tire_7
+    3300038: tire_8
+    3300040: tire_9
+    3300042: carborator
+    3300044: carborator_2
+    3300046: exhaust
+    3300048: exhaust_2
+    4300000: body
+    4300002: flatBed
+    4300004: container
+    4300006: tire
+    4300008: tire_2
+    4300010: tire_3
+    4300012: tire_4
+    4300014: tire_5
+    4300016: tire_6
+    4300018: tire_7
+    4300020: tire_8
+    4300022: tire_9
+    4300024: tire_10
+    4300026: tire_11
+    4300028: tire_12
+    4300030: tire_13
+    4300032: tire_14
+    4300034: tire_15
+    4300036: tire_16
+    4300038: tire_17
+    4300040: tire_18
+    4300042: carborator
+    4300044: exhaust
+    4300046: carborator_2
+    4300048: exhaust_2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: f3c49d9d34c66d542a6a9a851f45388c, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
