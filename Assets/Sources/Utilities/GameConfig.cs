@@ -7,6 +7,8 @@ namespace cln
         public static readonly Vector3 CubeMoveVelocity = new Vector3(0f, -5f, 0f);
         public static readonly Vector3 CubeVelocityStep = new Vector3(0f, -1f, 0f);
         public static readonly Vector3 CubeSlideVelocity = new Vector3(20f, 0f, 0f);
+        public static readonly Vector3 LeftDriftVelocity = new Vector3(5f, 0f, 0f);
+        public static readonly Vector3 RightDriftVelocity = new Vector3(-5f, 0f, 0f);
         public static readonly Vector3 ObstacleMoveVelocity = new Vector3(0f, -2f, 0f);
         public const float CubeVelocityStepTimer = 5f;
 
