@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using cln.Sources.Services;
 using Entitas;
+using zehreken.i_cheat;
 
 namespace cln
 {
@@ -27,7 +28,7 @@ namespace cln
         {
             foreach (var inputEntity in entities)
             {
-                inputEntity.Destroy();
+                Dbg.Log(inputEntity.input.type);
                 var cubeEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
                 if (cubeEntity.slide.direction == 1)
                 {
@@ -38,8 +39,15 @@ namespace cln
                     cubeEntity.ReplaceSlide(1);
                 }
 
+                inputEntity.Destroy();
                 Services.GetAudioService().Play(Clip.Jump);
             }
         }
+    }
+
+    public enum InputType
+    {
+        Left,
+        Right,
     }
 }

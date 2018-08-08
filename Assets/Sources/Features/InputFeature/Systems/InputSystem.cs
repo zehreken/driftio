@@ -16,7 +16,11 @@ namespace cln
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _context.CreateEntity().isInput = true;
+                _context.CreateEntity().AddInput(InputType.Left);
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                _context.CreateEntity().AddInput(InputType.Right);
             }
         }
     }

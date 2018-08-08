@@ -5,6 +5,6 @@ namespace cln
     [Game]
     public sealed class InputComponent : IComponent
     {
-        
+        public InputType type;
     }
 }

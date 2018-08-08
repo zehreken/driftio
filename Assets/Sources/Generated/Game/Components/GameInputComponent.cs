@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly cln.InputComponent inputComponent = new cln.InputComponent();
+    public cln.InputComponent input { get { return (cln.InputComponent)GetComponent(GameComponentsLookup.Input); } }
+    public bool hasInput { get { return HasComponent(GameComponentsLookup.Input); } }
 
-    public bool isInput {
-        get { return HasComponent(GameComponentsLookup.Input); }
-        set {
-            if (value != isInput) {
-                var index = GameComponentsLookup.Input;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : inputComponent;
+    public void AddInput(cln.InputType newType) {
+        var index = GameComponentsLookup.Input;
+        var component = CreateComponent<cln.InputComponent>(index);
+        component.type = newType;
+        AddComponent(index, component);
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public void ReplaceInput(cln.InputType newType) {
+        var index = GameComponentsLookup.Input;
+        var component = CreateComponent<cln.InputComponent>(index);
+        component.type = newType;
+        ReplaceComponent(index, component);
+    }
+
+    public void RemoveInput() {
+        RemoveComponent(GameComponentsLookup.Input);
     }
 }
 
