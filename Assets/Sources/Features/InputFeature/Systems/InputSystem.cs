@@ -30,6 +30,9 @@ namespace cln
             if (Input.touchCount <= 0)
                 return;
 
+            if (Input.GetTouch(0).phase != TouchPhase.Began)
+                return;
+
             if (Input.GetTouch(0).position.x <= Screen.width / 2f)
             {
                 _context.CreateEntity().AddInput(InputType.Left);

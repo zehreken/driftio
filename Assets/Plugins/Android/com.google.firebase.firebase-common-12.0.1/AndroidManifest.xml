@@ -7,7 +7,7 @@
     <application>
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.mogze.driftdriftaction.firebaseinitprovider"
+            android:authorities="com.mogze.driftio.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
     </application>
