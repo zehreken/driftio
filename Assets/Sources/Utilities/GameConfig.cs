@@ -4,7 +4,8 @@ namespace cln
 {
     public static class GameConfig
     {
-        public static readonly Vector3 MoveSpeed = new Vector3(5f, 5f, 0);
+        public const float MoveSpeed = 5f;
+        public static readonly Vector3 MoveVelocity = new Vector3(5f, 5f, 0);
         public static readonly Vector3 CubeMoveVelocity = new Vector3(0f, -5f, 0f);
         public static readonly Vector3 CubeVelocityStep = new Vector3(0f, -1f, 0f);
         public static readonly Vector3 CubeSlideVelocity = new Vector3(20f, 0f, 0f);

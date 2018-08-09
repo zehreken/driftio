@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using cln.Sources.Services;
 using Entitas;
-using zehreken.i_cheat;
 
 namespace cln
 {
@@ -28,14 +27,42 @@ namespace cln
         {
             foreach (var inputEntity in entities)
             {
-                var cubeEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
-                if (cubeEntity.slide.direction == 1)
+                var carEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
+                if (inputEntity.input.type == InputType.Left)
                 {
-                    cubeEntity.ReplaceSlide(-1);
+                    switch (carEntity.direction.value)
+                    {
+                        case Direction.North:
+                            carEntity.ReplaceDirection(Direction.West);
+                            break;
+                        case Direction.East:
+                            carEntity.ReplaceDirection(Direction.North);
+                            break;
+                        case Direction.South:
+                            carEntity.ReplaceDirection(Direction.East);
+                            break;
+                        case Direction.West:
+                            carEntity.ReplaceDirection(Direction.South);
+                            break;
+                    }
                 }
-                else
+                else if (inputEntity.input.type == InputType.Right)
                 {
-                    cubeEntity.ReplaceSlide(1);
+                    switch (carEntity.direction.value)
+                    {
+                        case Direction.North:
+                            carEntity.ReplaceDirection(Direction.East);
+                            break;
+                        case Direction.East:
+                            carEntity.ReplaceDirection(Direction.South);
+                            break;
+                        case Direction.South:
+                            carEntity.ReplaceDirection(Direction.West);
+                            break;
+                        case Direction.West:
+                            carEntity.ReplaceDirection(Direction.North);
+                            break;
+                    }
                 }
 
                 inputEntity.Destroy();

@@ -11,25 +11,27 @@ public static class GameComponentsLookup {
     public const int Collision = 0;
     public const int Color = 1;
     public const int Cube = 2;
-    public const int EndGame = 3;
-    public const int GameScore = 4;
-    public const int HighScore = 5;
-    public const int Input = 6;
-    public const int Obstacle = 7;
-    public const int Position = 8;
-    public const int Prefab = 9;
-    public const int Slide = 10;
-    public const int Velocity = 11;
-    public const int View = 12;
-    public const int GameScoreListener = 13;
-    public const int HighScoreListener = 14;
+    public const int Direction = 3;
+    public const int EndGame = 4;
+    public const int GameScore = 5;
+    public const int HighScore = 6;
+    public const int Input = 7;
+    public const int Obstacle = 8;
+    public const int Position = 9;
+    public const int Prefab = 10;
+    public const int Slide = 11;
+    public const int Velocity = 12;
+    public const int View = 13;
+    public const int GameScoreListener = 14;
+    public const int HighScoreListener = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Collision",
         "Color",
         "Cube",
+        "Direction",
         "EndGame",
         "GameScore",
         "HighScore",
@@ -48,6 +50,7 @@ public static class GameComponentsLookup {
         typeof(cln.CollisionComponent),
         typeof(cln.ColorComponent),
         typeof(cln.CubeComponent),
+        typeof(cln.DirectionComponent),
         typeof(cln.EndGame),
         typeof(cln.GameScoreComponent),
         typeof(cln.HighScoreComponent),

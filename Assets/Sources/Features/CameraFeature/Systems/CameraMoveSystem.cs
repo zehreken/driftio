@@ -23,8 +23,8 @@ namespace cln
 
         public void Execute()
         {
-            var clampedX = Mathf.Clamp(_cubeEntity.position.value.x, -4f, 4f);
-            var diff = new Vector3(clampedX, _cubeEntity.position.value.y - 13f, -27f) -
+//            var clampedX = Mathf.Clamp(_cubeEntity.position.value.x, -4f, 4f);
+            var diff = new Vector3(_cubeEntity.position.value.x, _cubeEntity.position.value.y, -27f) -
                        _cameraTransform.position;
             _cameraTransform.Translate(diff * 2f * Time.deltaTime);
         }

@@ -12,7 +12,7 @@
 
             Add(new ProcessInputSystem(contexts.game));
 
-            Add(new GenerateObstacleSystem(contexts.game));
+//            Add(new GenerateObstacleSystem(contexts.game));
 
             Add(new DriftSystem(contexts.game));
 
