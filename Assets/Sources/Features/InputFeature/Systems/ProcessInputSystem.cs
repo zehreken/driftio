@@ -28,7 +28,6 @@ namespace cln
         {
             foreach (var inputEntity in entities)
             {
-                Dbg.Log(inputEntity.input.type);
                 var cubeEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
                 if (cubeEntity.slide.direction == 1)
                 {

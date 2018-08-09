@@ -5,7 +5,7 @@
         public GameSystems(Contexts contexts)
         {
             Add(new GameEventSystems(contexts));
-            
+
             Add(new StartSystem(contexts.game));
 
             Add(new InputSystem(contexts.game));
@@ -14,7 +14,9 @@
 
             Add(new GenerateObstacleSystem(contexts.game));
 
-            Add(new SlideSystem(contexts.game));
+            Add(new DriftSystem(contexts.game));
+
+//            Add(new SlideSystem(contexts.game));
 
             Add(new MoveSystem(contexts.game));
 
