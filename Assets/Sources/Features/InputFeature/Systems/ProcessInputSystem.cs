@@ -28,21 +28,27 @@ namespace cln
             foreach (var inputEntity in entities)
             {
                 var carEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
+                if (carEntity.hasTargetDirection)
+                {
+                    inputEntity.Destroy();
+                    return;
+                }
+
                 if (inputEntity.input.type == InputType.Left)
                 {
                     switch (carEntity.direction.value)
                     {
                         case Direction.North:
-                            carEntity.ReplaceDirection(Direction.West);
+                            carEntity.AddTargetDirection(Direction.West);
                             break;
                         case Direction.East:
-                            carEntity.ReplaceDirection(Direction.North);
+                            carEntity.AddTargetDirection(Direction.North);
                             break;
                         case Direction.South:
-                            carEntity.ReplaceDirection(Direction.East);
+                            carEntity.AddTargetDirection(Direction.East);
                             break;
                         case Direction.West:
-                            carEntity.ReplaceDirection(Direction.South);
+                            carEntity.AddTargetDirection(Direction.South);
                             break;
                     }
                 }
@@ -51,19 +57,26 @@ namespace cln
                     switch (carEntity.direction.value)
                     {
                         case Direction.North:
-                            carEntity.ReplaceDirection(Direction.East);
+                            carEntity.AddTargetDirection(Direction.East);
                             break;
                         case Direction.East:
-                            carEntity.ReplaceDirection(Direction.South);
+                            carEntity.AddTargetDirection(Direction.South);
                             break;
                         case Direction.South:
-                            carEntity.ReplaceDirection(Direction.West);
+                            carEntity.AddTargetDirection(Direction.West);
                             break;
                         case Direction.West:
-                            carEntity.ReplaceDirection(Direction.North);
+                            carEntity.AddTargetDirection(Direction.North);
                             break;
                     }
                 }
+                
+                carEntity.AddTimer(2f);
+                carEntity.AddOnComplete(() =>
+                {
+                    carEntity.ReplaceDirection(carEntity.targetDirection.value);
+                    carEntity.RemoveTargetDirection();
+                });
 
                 inputEntity.Destroy();
                 Services.GetAudioService().Play(Clip.Jump);

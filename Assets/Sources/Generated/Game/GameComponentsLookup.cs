@@ -17,15 +17,18 @@ public static class GameComponentsLookup {
     public const int HighScore = 6;
     public const int Input = 7;
     public const int Obstacle = 8;
-    public const int Position = 9;
-    public const int Prefab = 10;
-    public const int Slide = 11;
-    public const int Velocity = 12;
-    public const int View = 13;
-    public const int GameScoreListener = 14;
-    public const int HighScoreListener = 15;
+    public const int OnComplete = 9;
+    public const int Position = 10;
+    public const int Prefab = 11;
+    public const int Slide = 12;
+    public const int TargetDirection = 13;
+    public const int Timer = 14;
+    public const int Velocity = 15;
+    public const int View = 16;
+    public const int GameScoreListener = 17;
+    public const int HighScoreListener = 18;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
         "Collision",
@@ -37,9 +40,12 @@ public static class GameComponentsLookup {
         "HighScore",
         "Input",
         "Obstacle",
+        "OnComplete",
         "Position",
         "Prefab",
         "Slide",
+        "TargetDirection",
+        "Timer",
         "Velocity",
         "View",
         "GameScoreListener",
@@ -56,9 +62,12 @@ public static class GameComponentsLookup {
         typeof(cln.HighScoreComponent),
         typeof(cln.InputComponent),
         typeof(cln.ObstacleComponent),
+        typeof(cln.OnCompleteComponent),
         typeof(cln.PositionComponent),
         typeof(cln.PrefabComponent),
         typeof(cln.SlideComponent),
+        typeof(cln.TargetDirectionComponent),
+        typeof(cln.TimerComponent),
         typeof(cln.VelocityComponent),
         typeof(cln.ViewComponent),
         typeof(GameScoreListenerComponent),

@@ -9,7 +9,7 @@ namespace cln
 
         public DriftSystem(IContext<GameEntity> context)
         {
-            _carGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Cube, GameMatcher.View));
+            _carGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Cube, GameMatcher.View, GameMatcher.TargetDirection));
         }
 
         public void Execute()

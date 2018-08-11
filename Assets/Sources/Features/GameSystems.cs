@@ -34,6 +34,10 @@
 
             Add(new ScoreSystem(contexts.game));
 
+            Add(new TimerSystem(contexts.game));
+
+            Add(new OnCompleteSystem(contexts.game));
+
             Add(new EndSystem(contexts.game));
         }
     }
