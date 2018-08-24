@@ -1,5 +1,6 @@
 ﻿using Entitas;
 using UnityEngine;
+using zehreken.i_cheat;
 
 namespace cln
 {
@@ -9,15 +10,27 @@ namespace cln
 
         public DriftSystem(IContext<GameEntity> context)
         {
-            _carGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Cube, GameMatcher.View, GameMatcher.TargetDirection));
+            _carGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Cube, GameMatcher.View,
+                GameMatcher.TargetDirection));
         }
 
         public void Execute()
         {
             foreach (var gameEntity in _carGroup.GetEntities())
             {
-                gameEntity.ReplaceVelocity(GameConfig.MoveSpeed *
-                                           GameConfig.DirectionVectors[(int) gameEntity.direction.value]);
+                if (gameEntity.hasTargetDirection)
+                {
+                    // Lerping from target to current because timer is decreasing
+                    gameEntity.ReplaceVelocity(GameConfig.MoveSpeed * Vector3.Lerp(
+                                                   GameConfig.DirectionVectors[(int) gameEntity.targetDirection.value],
+                                                   GameConfig.DirectionVectors[(int) gameEntity.direction.value],
+                                                   gameEntity.timer.remaining / GameConfig.RotationDuration));
+                }
+                else
+                {
+                    gameEntity.ReplaceVelocity(GameConfig.MoveSpeed *
+                                               GameConfig.DirectionVectors[(int) gameEntity.direction.value]);
+                }
             }
         }
     }

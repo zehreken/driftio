@@ -23,7 +23,7 @@ namespace cln
         public void Execute()
         {
             _cube.view.value.transform.GetChild(1).eulerAngles = new Vector3(
-                Mathf.Atan2(_cube.velocity.value.y, _cube.velocity.value.x) * Mathf.Rad2Deg + 90f,
+                Mathf.Atan2(_cube.velocity.value.y, _cube.velocity.value.x) * Mathf.Rad2Deg + 180f,
                 -90f, 90f);
         }
     }

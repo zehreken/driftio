@@ -71,7 +71,7 @@ namespace cln
                     }
                 }
                 
-                carEntity.AddTimer(2f);
+                carEntity.AddTimer(GameConfig.RotationDuration);
                 carEntity.AddOnComplete(() =>
                 {
                     carEntity.ReplaceDirection(carEntity.targetDirection.value);

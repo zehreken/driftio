@@ -28,7 +28,8 @@
 
             Add(new CameraMoveSystem(contexts.game));
 
-            Add(new IncreaseVelocitySystem(contexts.game));
+            // This causes that slight direction change
+//            Add(new IncreaseVelocitySystem(contexts.game));
 
             Add(new RotateSystem(contexts.game));
 

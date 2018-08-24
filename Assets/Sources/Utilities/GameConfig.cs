@@ -15,6 +15,8 @@ namespace cln
         public const string ObstacleTag = "Obstacle";
         public const string PlatformTag = "Platform";
 
+        public const float RotationDuration = 0.5f;
+
         public static readonly Vector3[] DirectionVectors =
         {
             new Vector3(1f, 1f, 0f),
