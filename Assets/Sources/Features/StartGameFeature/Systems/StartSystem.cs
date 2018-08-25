@@ -23,6 +23,13 @@ namespace cln
 //            cubeEntity.AddSlide(1);
             cubeEntity.AddDirection(Direction.North);
             cubeEntity.isCube = true;
+
+            var aiEntity = _context.CreateEntity();
+            aiEntity.AddAi("test");
+            aiEntity.AddPrefab("Prefabs/Game/CubeVan");
+            aiEntity.AddVelocity(GameConfig.MoveVelocity);
+            aiEntity.AddDirection(Direction.North);
+            aiEntity.AddPosition(Vector3.left * 3f);
         }
     }
 }

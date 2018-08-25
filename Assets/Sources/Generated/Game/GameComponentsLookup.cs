@@ -8,29 +8,31 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Collision = 0;
-    public const int Color = 1;
-    public const int Cube = 2;
-    public const int Direction = 3;
-    public const int EndGame = 4;
-    public const int GameScore = 5;
-    public const int HighScore = 6;
-    public const int Input = 7;
-    public const int Obstacle = 8;
-    public const int OnComplete = 9;
-    public const int Position = 10;
-    public const int Prefab = 11;
-    public const int Slide = 12;
-    public const int TargetDirection = 13;
-    public const int Timer = 14;
-    public const int Velocity = 15;
-    public const int View = 16;
-    public const int GameScoreListener = 17;
-    public const int HighScoreListener = 18;
+    public const int Ai = 0;
+    public const int Collision = 1;
+    public const int Color = 2;
+    public const int Cube = 3;
+    public const int Direction = 4;
+    public const int EndGame = 5;
+    public const int GameScore = 6;
+    public const int HighScore = 7;
+    public const int Input = 8;
+    public const int Obstacle = 9;
+    public const int OnComplete = 10;
+    public const int Position = 11;
+    public const int Prefab = 12;
+    public const int Slide = 13;
+    public const int TargetDirection = 14;
+    public const int Timer = 15;
+    public const int Velocity = 16;
+    public const int View = 17;
+    public const int GameScoreListener = 18;
+    public const int HighScoreListener = 19;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
+        "Ai",
         "Collision",
         "Color",
         "Cube",
@@ -53,6 +55,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(cln.AiComponent),
         typeof(cln.CollisionComponent),
         typeof(cln.ColorComponent),
         typeof(cln.CubeComponent),

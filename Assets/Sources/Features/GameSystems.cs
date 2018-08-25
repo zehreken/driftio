@@ -10,6 +10,8 @@
 
             Add(new InputSystem(contexts.game));
 
+            Add(new AiInputSystem(contexts.game));
+
             Add(new ProcessInputSystem(contexts.game));
 
 //            Add(new GenerateObstacleSystem(contexts.game));
