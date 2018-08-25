@@ -17,7 +17,7 @@ namespace cln
             Debug.Log("Initialize");
 
             var cubeEntity = _context.CreateEntity();
-            cubeEntity.AddPrefab("Prefabs/Game/CubeVan");
+            cubeEntity.AddPrefab("Prefabs/Game/CubePickup");
             cubeEntity.AddPosition(new Vector3(0f, -5f, 0f));
             cubeEntity.AddVelocity(GameConfig.MoveVelocity);
 //            cubeEntity.AddSlide(1);
