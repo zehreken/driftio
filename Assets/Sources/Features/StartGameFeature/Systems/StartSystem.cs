@@ -18,7 +18,7 @@ namespace cln
             Debug.Log("Initialize");
 
             var cubeEntity = _context.CreateEntity();
-            cubeEntity.AddPrefab(PrefabName.Pickup);
+            cubeEntity.AddPrefab(PrefabName.Car);
             cubeEntity.AddPosition(new Vector3(0f, -5f, 0f));
             cubeEntity.AddVelocity(GameConfig.MoveVelocity);
             cubeEntity.AddDirection(Direction.North);
@@ -28,7 +28,7 @@ namespace cln
             {
                 var aiEntity = _context.CreateEntity();
                 aiEntity.AddAi("Ai" + i);
-                aiEntity.AddPrefab(PrefabName.Jeep);
+                aiEntity.AddPrefab((PrefabName) Random.Range(2, 8));
                 aiEntity.AddVelocity(GameConfig.MoveVelocity);
                 aiEntity.AddDirection(Direction.North);
                 aiEntity.AddPosition(Vector3.left * i);
