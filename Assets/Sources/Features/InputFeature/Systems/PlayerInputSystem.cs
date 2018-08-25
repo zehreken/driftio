@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace cln
 {
-    public sealed class InputSystem : IExecuteSystem
+    public sealed class PlayerInputSystem : IExecuteSystem
     {
         private IContext<GameEntity> _context;
+        private GameEntity _playerCarEntity;
 
-        public InputSystem(IContext<GameEntity> context)
+        public PlayerInputSystem(IContext<GameEntity> context)
         {
             _context = context;
         }
@@ -15,18 +16,24 @@ namespace cln
 #if UNITY_EDITOR
         public void Execute()
         {
+            if (_playerCarEntity == null)
+                _playerCarEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
+
             if (Input.GetMouseButtonDown(0))
             {
-                _context.CreateEntity().AddInput(InputType.Left);
+                _playerCarEntity.AddInput(InputType.Left);
             }
             else if (Input.GetMouseButtonDown(1))
             {
-                _context.CreateEntity().AddInput(InputType.Right);
+                _playerCarEntity.AddInput(InputType.Right);
             }
         }
 #elif UNITY_ANDROID
         public void Execute()
         {
+            if (_playerCarEntity == null)
+                _playerCarEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
+
             if (Input.touchCount <= 0)
                 return;
 
@@ -35,11 +42,11 @@ namespace cln
 
             if (Input.GetTouch(0).position.x <= Screen.width / 2f)
             {
-                _context.CreateEntity().AddInput(InputType.Left);
+                _playerCarEntity.AddInput(InputType.Left);
             }
             else
             {
-                _context.CreateEntity().AddInput(InputType.Right);
+                _playerCarEntity.AddInput(InputType.Right);
             }
         }
 #endif

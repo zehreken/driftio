@@ -8,7 +8,7 @@
 
             Add(new StartSystem(contexts.game));
 
-            Add(new InputSystem(contexts.game));
+            Add(new PlayerInputSystem(contexts.game));
 
             Add(new AiInputSystem(contexts.game));
 

@@ -19,7 +19,7 @@ namespace cln
             foreach (var moveEntity in _moveGroup.GetEntities())
             {
                 moveEntity.ReplacePosition(moveEntity.position.value + moveEntity.velocity.value * Time.deltaTime);
-                if (moveEntity.isCube)
+                if (moveEntity.isPlayer)
                     moveEntity.ReplaceGameScore((int) -moveEntity.position.value.y);
             }
         }

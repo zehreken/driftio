@@ -11,14 +11,14 @@ public static class GameComponentsLookup {
     public const int Ai = 0;
     public const int Collision = 1;
     public const int Color = 2;
-    public const int Cube = 3;
-    public const int Direction = 4;
-    public const int EndGame = 5;
-    public const int GameScore = 6;
-    public const int HighScore = 7;
-    public const int Input = 8;
-    public const int Obstacle = 9;
-    public const int OnComplete = 10;
+    public const int Direction = 3;
+    public const int EndGame = 4;
+    public const int GameScore = 5;
+    public const int HighScore = 6;
+    public const int Input = 7;
+    public const int Obstacle = 8;
+    public const int OnComplete = 9;
+    public const int Player = 10;
     public const int Position = 11;
     public const int Prefab = 12;
     public const int Slide = 13;
@@ -35,7 +35,6 @@ public static class GameComponentsLookup {
         "Ai",
         "Collision",
         "Color",
-        "Cube",
         "Direction",
         "EndGame",
         "GameScore",
@@ -43,6 +42,7 @@ public static class GameComponentsLookup {
         "Input",
         "Obstacle",
         "OnComplete",
+        "Player",
         "Position",
         "Prefab",
         "Slide",
@@ -58,7 +58,6 @@ public static class GameComponentsLookup {
         typeof(cln.AiComponent),
         typeof(cln.CollisionComponent),
         typeof(cln.ColorComponent),
-        typeof(cln.CubeComponent),
         typeof(cln.DirectionComponent),
         typeof(cln.EndGame),
         typeof(cln.GameScoreComponent),
@@ -66,6 +65,7 @@ public static class GameComponentsLookup {
         typeof(cln.InputComponent),
         typeof(cln.ObstacleComponent),
         typeof(cln.OnCompleteComponent),
+        typeof(cln.PlayerComponent),
         typeof(cln.PositionComponent),
         typeof(cln.PrefabComponent),
         typeof(cln.SlideComponent),

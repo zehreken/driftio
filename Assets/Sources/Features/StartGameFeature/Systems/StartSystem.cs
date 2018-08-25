@@ -20,9 +20,8 @@ namespace cln
             cubeEntity.AddPrefab("Prefabs/Game/CubePickup");
             cubeEntity.AddPosition(new Vector3(0f, -5f, 0f));
             cubeEntity.AddVelocity(GameConfig.MoveVelocity);
-//            cubeEntity.AddSlide(1);
             cubeEntity.AddDirection(Direction.North);
-            cubeEntity.isCube = true;
+            cubeEntity.isPlayer = true;
 
             var aiEntity = _context.CreateEntity();
             aiEntity.AddAi("test");

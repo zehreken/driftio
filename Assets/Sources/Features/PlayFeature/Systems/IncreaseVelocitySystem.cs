@@ -16,7 +16,7 @@ namespace cln
 
         public void Initialize()
         {
-            _cube = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
+            _cube = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
             _timer = GameConfig.CubeVelocityStepTimer;
         }
 

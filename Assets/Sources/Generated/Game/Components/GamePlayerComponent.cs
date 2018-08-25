@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly cln.CubeComponent cubeComponent = new cln.CubeComponent();
+    static readonly cln.PlayerComponent playerComponent = new cln.PlayerComponent();
 
-    public bool isCube {
-        get { return HasComponent(GameComponentsLookup.Cube); }
+    public bool isPlayer {
+        get { return HasComponent(GameComponentsLookup.Player); }
         set {
-            if (value != isCube) {
-                var index = GameComponentsLookup.Cube;
+            if (value != isPlayer) {
+                var index = GameComponentsLookup.Player;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : cubeComponent;
+                            : playerComponent;
 
                     AddComponent(index, component);
                 } else {
@@ -40,17 +40,17 @@ public partial class GameEntity {
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCube;
+    static Entitas.IMatcher<GameEntity> _matcherPlayer;
 
-    public static Entitas.IMatcher<GameEntity> Cube {
+    public static Entitas.IMatcher<GameEntity> Player {
         get {
-            if (_matcherCube == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Cube);
+            if (_matcherPlayer == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Player);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCube = matcher;
+                _matcherPlayer = matcher;
             }
 
-            return _matcherCube;
+            return _matcherPlayer;
         }
     }
 }

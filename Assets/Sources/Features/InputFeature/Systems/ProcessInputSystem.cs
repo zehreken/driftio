@@ -25,16 +25,15 @@ namespace cln
 
         protected override void Execute(List<GameEntity> entities)
         {
-            foreach (var inputEntity in entities)
+            foreach (var carEntity in entities)
             {
-                var carEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
                 if (carEntity.hasTargetDirection)
                 {
-                    inputEntity.Destroy();
+                    carEntity.RemoveInput();
                     return;
                 }
 
-                if (inputEntity.input.type == InputType.Left)
+                if (carEntity.input.type == InputType.Left)
                 {
                     switch (carEntity.direction.value)
                     {
@@ -52,7 +51,7 @@ namespace cln
                             break;
                     }
                 }
-                else if (inputEntity.input.type == InputType.Right)
+                else if (carEntity.input.type == InputType.Right)
                 {
                     switch (carEntity.direction.value)
                     {
@@ -78,7 +77,8 @@ namespace cln
                     carEntity.RemoveTargetDirection();
                 });
 
-                inputEntity.Destroy();
+                carEntity.RemoveInput();
+
                 Services.GetAudioService().Play(Clip.Jump);
             }
         }

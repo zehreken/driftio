@@ -17,7 +17,7 @@ namespace cln
         public void Initialize()
         {
             _cameraTransform = Camera.main.transform;
-            _cubeEntity = _context.GetGroup(GameMatcher.Cube).GetSingleEntity();
+            _cubeEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
             _cameraTransform.localPosition = _cubeEntity.position.value;
         }
 

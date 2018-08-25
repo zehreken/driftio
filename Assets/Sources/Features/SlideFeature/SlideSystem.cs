@@ -9,7 +9,7 @@ namespace cln
 
         public SlideSystem(IContext<GameEntity> context)
         {
-            _cubeGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Cube, GameMatcher.View));
+            _cubeGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.Player, GameMatcher.View));
         }
 
         public void Execute()
