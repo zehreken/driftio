@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838f7e13eae84635a3496d4e5a64d236, type: 3}
   m_Name: PrefabDictionary
   m_EditorClassIdentifier: 
-  Names: 060000000300000004000000
+  Names: 00000000070000000400000005000000
   Prefabs:
+  - {fileID: 1993714353094064, guid: a1dd991f3ebe55f44989444b37ac18ce, type: 2}
   - {fileID: 1103097459451514, guid: c98b10e13cc61eb499e22aabe2fe6cab, type: 2}
   - {fileID: 1149613984398244, guid: 8b28236fff9ef084dab1dc0253a63cd3, type: 2}
   - {fileID: 1785208588873444, guid: 629ca1e05cd71b64b99116e6eeee8607, type: 2}

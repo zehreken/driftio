@@ -7,6 +7,7 @@ namespace zehreken.i_cheat.MiniPool
 {
     public enum PrefabName
     {
+        GameContainer,
         Car,
         PoliceCar,
         Haul,
@@ -14,6 +15,10 @@ namespace zehreken.i_cheat.MiniPool
         Pickup,
         Truck,
         Van,
+    }
+    
+    public class PoolInfo : MonoBehaviour
+    {
     }
 
     public static class MiniPool

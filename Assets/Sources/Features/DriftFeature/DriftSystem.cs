@@ -1,6 +1,5 @@
 ﻿using Entitas;
 using UnityEngine;
-using zehreken.i_cheat;
 
 namespace cln
 {
@@ -10,8 +9,7 @@ namespace cln
 
         public DriftSystem(IContext<GameEntity> context)
         {
-            _carGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.View,
-                GameMatcher.TargetDirection));
+            _carGroup = context.GetGroup(GameMatcher.View);
         }
 
         public void Execute()

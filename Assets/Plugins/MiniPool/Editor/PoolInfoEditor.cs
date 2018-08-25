@@ -1,5 +1,4 @@
 ﻿using UnityEditor;
-using UnityEngine;
 using zehreken.i_cheat.MiniPool;
 
 [CustomEditor(typeof(PoolInfo))]
@@ -11,8 +10,4 @@ public class PoolInfoEditor : Editor
 
         EditorGUILayout.HelpBox(MiniPool.GetInfo(), MessageType.Info);
     }
-}
-
-public class PoolInfo : MonoBehaviour
-{
 }

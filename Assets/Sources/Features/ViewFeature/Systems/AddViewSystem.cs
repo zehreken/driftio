@@ -9,12 +9,10 @@ namespace cln
     public sealed class AddViewSystem : ReactiveSystem<GameEntity>, ITearDownSystem
     {
         private readonly Transform _gameContainer;
-        private PrefabDictionary _prefabDictionary;
 
         public AddViewSystem(IContext<GameEntity> context) : base(context)
         {
-            _gameContainer = new GameObject("GameContainer").transform;
-            _prefabDictionary = Resources.Load<PrefabDictionary>("PrefabDictionary");
+            _gameContainer = MiniPool.Create(PrefabName.GameContainer, Vector3.zero).transform;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -49,7 +47,12 @@ namespace cln
 
         public void TearDown()
         {
-            Object.Destroy(_gameContainer.gameObject);
+//            Object.Destroy(_gameContainer.gameObject);
+            for (int i = 0; i < _gameContainer.childCount; i++)
+            {
+                _gameContainer.GetChild(i).gameObject.SendToPool();
+            }
+            _gameContainer.gameObject.SendToPool();
         }
     }
 }
