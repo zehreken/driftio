@@ -20,19 +20,25 @@ namespace cln
                 _timer = 0f;
                 foreach (var ai in _aiGroup.GetEntities())
                 {
+                    var rnd = Random.Range(0, 2);
+                    var targetDirection = Direction.North;
                     switch (ai.direction.value)
                     {
                         case Direction.North:
-                            ai.AddTargetDirection(Direction.West);
+                            targetDirection = rnd == 0 ? Direction.West : Direction.East;
+                            ai.AddTargetDirection(targetDirection);
                             break;
                         case Direction.East:
-                            ai.AddTargetDirection(Direction.North);
+                            targetDirection = rnd == 0 ? Direction.North : Direction.South;
+                            ai.AddTargetDirection(targetDirection);
                             break;
                         case Direction.South:
-                            ai.AddTargetDirection(Direction.East);
+                            targetDirection = rnd == 0 ? Direction.West : Direction.East;
+                            ai.AddTargetDirection(targetDirection);
                             break;
                         case Direction.West:
-                            ai.AddTargetDirection(Direction.South);
+                            targetDirection = rnd == 0 ? Direction.North : Direction.South;
+                            ai.AddTargetDirection(targetDirection);
                             break;
                     }
                     
