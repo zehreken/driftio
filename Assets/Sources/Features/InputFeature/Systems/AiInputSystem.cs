@@ -16,11 +16,18 @@ namespace cln
         public void Execute()
         {
             _timer += Time.deltaTime;
-            if (_timer >= 3f)
+            foreach (var ai in _aiGroup.GetEntities())
             {
-                _timer = 0f;
-                foreach (var ai in _aiGroup.GetEntities())
+                if (ai.DetectBorder())
                 {
+                    var rnd = Random.Range(0, 2);
+                    if (ai.hasInput)
+                        ai.RemoveInput();
+                    ai.AddInput(rnd == 0 ? InputType.Left : InputType.Right);
+                }
+                else if (_timer >= 3f)
+                {
+                    _timer = 0f;
                     var rnd = Random.Range(0, 2);
                     var targetDirection = Direction.North;
 

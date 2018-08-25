@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2866e7740ff8f204a8d03f538f603dd7, type: 3}
-  m_Name: AudioDictionary
+  m_Script: {fileID: 11500000, guid: 838f7e13eae84635a3496d4e5a64d236, type: 3}
+  m_Name: PrefabDictionary
   m_EditorClassIdentifier: 
   Names: 
-  AudioClips: []
+  Prefabs: []
