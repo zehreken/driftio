@@ -7,8 +7,13 @@ namespace zehreken.i_cheat.MiniPool
 {
     public enum PrefabName
     {
-        Yellow,
-        Green
+        Car,
+        PoliceCar,
+        Haul,
+        Jeep,
+        Pickup,
+        Truck,
+        Van,
     }
 
     public static class MiniPool

@@ -40,21 +40,21 @@ namespace cln
 
         private void CreateBorder()
         {
-            var fieldEntity = _context.CreateEntity();
-            fieldEntity.AddPrefab("Prefabs/Game/Field");
-            fieldEntity.AddPosition(new Vector3(0f, _obstacleIndex * -20f, -0.4f));
+//            var fieldEntity = _context.CreateEntity();
+//            fieldEntity.AddPrefab("Prefabs/Game/Field");
+//            fieldEntity.AddPosition(new Vector3(0f, _obstacleIndex * -20f, -0.4f));
         }
 
         private void CreateObstacles()
         {
             for (int i = 0; i < 10; i++)
             {
-                var obstacleEntity = _context.CreateEntity();
-                obstacleEntity.AddPrefab("Prefabs/Game/Obstacle");
-                obstacleEntity.AddPosition(new Vector3(Random.Range(-10, 10),
-                    _obstacleIndex * -20f - Random.Range(0, 20), 0f));
-                obstacleEntity.AddVelocity(GameConfig.ObstacleMoveVelocity);
-                obstacleEntity.isObstacle = true;
+//                var obstacleEntity = _context.CreateEntity();
+//                obstacleEntity.AddPrefab("Prefabs/Game/Obstacle");
+//                obstacleEntity.AddPosition(new Vector3(Random.Range(-10, 10),
+//                    _obstacleIndex * -20f - Random.Range(0, 20), 0f));
+//                obstacleEntity.AddVelocity(GameConfig.ObstacleMoveVelocity);
+//                obstacleEntity.isObstacle = true;
             }
         }
     }

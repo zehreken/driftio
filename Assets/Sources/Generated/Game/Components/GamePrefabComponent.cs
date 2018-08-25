@@ -11,17 +11,17 @@ public partial class GameEntity {
     public cln.PrefabComponent prefab { get { return (cln.PrefabComponent)GetComponent(GameComponentsLookup.Prefab); } }
     public bool hasPrefab { get { return HasComponent(GameComponentsLookup.Prefab); } }
 
-    public void AddPrefab(string newValue) {
+    public void AddPrefab(zehreken.i_cheat.MiniPool.PrefabName newName) {
         var index = GameComponentsLookup.Prefab;
         var component = CreateComponent<cln.PrefabComponent>(index);
-        component.value = newValue;
+        component.name = newName;
         AddComponent(index, component);
     }
 
-    public void ReplacePrefab(string newValue) {
+    public void ReplacePrefab(zehreken.i_cheat.MiniPool.PrefabName newName) {
         var index = GameComponentsLookup.Prefab;
         var component = CreateComponent<cln.PrefabComponent>(index);
-        component.value = newValue;
+        component.name = newName;
         ReplaceComponent(index, component);
     }
 

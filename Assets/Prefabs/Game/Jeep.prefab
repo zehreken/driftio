@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23055387844249068}
   - component: {fileID: 54435923876687810}
   m_Layer: 0
-  m_Name: CubeJeep
+  m_Name: Jeep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,16 +2,19 @@
 using Entitas;
 using Entitas.Unity;
 using UnityEngine;
+using zehreken.i_cheat.MiniPool;
 
 namespace cln
 {
     public sealed class AddViewSystem : ReactiveSystem<GameEntity>, ITearDownSystem
     {
         private readonly Transform _gameContainer;
+        private PrefabDictionary _prefabDictionary;
 
         public AddViewSystem(IContext<GameEntity> context) : base(context)
         {
             _gameContainer = new GameObject("GameContainer").transform;
+            _prefabDictionary = Resources.Load<PrefabDictionary>("PrefabDictionary");
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -28,7 +31,7 @@ namespace cln
         {
             foreach (var gameEntity in entities)
             {
-                gameEntity.AddView(Object.Instantiate(Resources.Load<GameObject>(gameEntity.prefab.value)));
+                gameEntity.AddView(MiniPool.Create(gameEntity.prefab.name, gameEntity.position.value));
                 gameEntity.view.value.transform.SetParent(_gameContainer);
 
                 if (gameEntity.isPlayer)
