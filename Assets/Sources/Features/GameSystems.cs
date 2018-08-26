@@ -8,6 +8,8 @@
 
             Add(new StartSystem(contexts.game));
 
+            Add(new AddViewSystem(contexts.game));
+
             Add(new PlayerInputSystem(contexts.game));
 
             Add(new AiInputSystem(contexts.game));
@@ -23,8 +25,6 @@
             Add(new MoveSystem(contexts.game));
 
             Add(new ProcessCollisionSystem(contexts.game));
-
-            Add(new AddViewSystem(contexts.game));
 
             Add(new SetPositionSystem(contexts.game));
 

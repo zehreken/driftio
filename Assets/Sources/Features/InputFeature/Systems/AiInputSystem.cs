@@ -18,12 +18,20 @@ namespace cln
             _timer += Time.deltaTime;
             foreach (var ai in _aiGroup.GetEntities())
             {
-                if (ai.DetectBorder())
+//                ai.DetectLeft();
+//                ai.DetectRight();
+                if (ai.DetectFront())
                 {
                     var rnd = Random.Range(0, 2);
                     if (ai.hasInput)
                         ai.RemoveInput();
-                    ai.AddInput(rnd == 0 ? InputType.Left : InputType.Right);
+                    
+                    if (ai.DetectLeft())
+                        ai.AddInput(InputType.Right);
+                    else if (ai.DetectRight())
+                        ai.AddInput(InputType.Left);
+                    else
+                        ai.AddInput(rnd == 0 ? InputType.Left : InputType.Right);
                 }
                 else if (_timer >= 3f)
                 {
@@ -31,7 +39,8 @@ namespace cln
                     var rnd = Random.Range(0, 2);
                     var targetDirection = Direction.North;
 
-                    ai.AddInput(rnd == 0 ? InputType.Left : InputType.Right);
+                    if (!ai.hasInput)
+                        ai.AddInput(rnd == 0 ? InputType.Left : InputType.Right);
                 }
             }
         }

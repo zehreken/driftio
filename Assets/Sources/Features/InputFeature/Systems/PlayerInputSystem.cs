@@ -40,13 +40,13 @@ namespace cln
             if (Input.GetTouch(0).phase != TouchPhase.Began)
                 return;
 
-            if (Input.GetTouch(0).position.x <= Screen.width / 2f)
+            if (Input.GetTouch(0).position.x > Screen.width / 4f)
             {
-                _playerCarEntity.AddInput(InputType.Left);
+                _playerCarEntity.AddInput(InputType.Right);
             }
             else
             {
-                _playerCarEntity.AddInput(InputType.Right);
+                _playerCarEntity.AddInput(InputType.Left);
             }
         }
 #endif
