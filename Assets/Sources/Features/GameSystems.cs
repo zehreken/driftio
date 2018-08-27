@@ -18,6 +18,8 @@
 
 //            Add(new GenerateObstacleSystem(contexts.game));
 
+            Add(new AccelerationSystem(contexts.game));
+
             Add(new DriftSystem(contexts.game));
 
 //            Add(new SlideSystem(contexts.game));
@@ -29,9 +31,6 @@
             Add(new SetPositionSystem(contexts.game));
 
             Add(new CameraMoveSystem(contexts.game));
-
-            // This causes that slight direction change
-//            Add(new IncreaseVelocitySystem(contexts.game));
 
             Add(new RotateSystem(contexts.game));
 

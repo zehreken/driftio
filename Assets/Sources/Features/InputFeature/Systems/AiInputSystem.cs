@@ -18,8 +18,6 @@ namespace cln
             _timer += Time.deltaTime;
             foreach (var ai in _aiGroup.GetEntities())
             {
-//                ai.DetectLeft();
-//                ai.DetectRight();
                 if (ai.DetectFront())
                 {
                     var rnd = Random.Range(0, 2);

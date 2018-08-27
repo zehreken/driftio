@@ -7,7 +7,7 @@ namespace cln
     {
         private readonly IContext<GameEntity> _context;
         private Transform _cameraTransform;
-        private GameEntity _cubeEntity;
+        private GameEntity _carEntity;
 
         public CameraMoveSystem(IContext<GameEntity> context)
         {
@@ -17,16 +17,17 @@ namespace cln
         public void Initialize()
         {
             _cameraTransform = Camera.main.transform;
-            _cubeEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
-            _cameraTransform.localPosition = _cubeEntity.position.value;
+            _carEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
+            _cameraTransform.localPosition = _carEntity.position.value;
         }
 
         public void Execute()
         {
-//            var clampedX = Mathf.Clamp(_cubeEntity.position.value.x, -4f, 4f);
-            var diff = new Vector3(_cubeEntity.position.value.x, _cubeEntity.position.value.y, -27f) -
+            var diff = new Vector3(_carEntity.position.value.x, _carEntity.position.value.y, -27f) +
+                       8f * GameConfig.DirectionVectors[(int) _carEntity.direction.value] -
                        _cameraTransform.position;
-            _cameraTransform.Translate(diff * 2f * Time.deltaTime);
+
+            _cameraTransform.Translate(diff * 1f * Time.deltaTime);
         }
     }
 }

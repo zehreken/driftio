@@ -22,14 +22,15 @@ public static class GameComponentsLookup {
     public const int Position = 11;
     public const int Prefab = 12;
     public const int Slide = 13;
-    public const int TargetDirection = 14;
-    public const int Timer = 15;
-    public const int Velocity = 16;
-    public const int View = 17;
-    public const int GameScoreListener = 18;
-    public const int HighScoreListener = 19;
+    public const int Speed = 14;
+    public const int TargetDirection = 15;
+    public const int Timer = 16;
+    public const int Velocity = 17;
+    public const int View = 18;
+    public const int GameScoreListener = 19;
+    public const int HighScoreListener = 20;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 21;
 
     public static readonly string[] componentNames = {
         "Ai",
@@ -46,6 +47,7 @@ public static class GameComponentsLookup {
         "Position",
         "Prefab",
         "Slide",
+        "Speed",
         "TargetDirection",
         "Timer",
         "Velocity",
@@ -69,6 +71,7 @@ public static class GameComponentsLookup {
         typeof(cln.PositionComponent),
         typeof(cln.PrefabComponent),
         typeof(cln.SlideComponent),
+        typeof(cln.SpeedComponent),
         typeof(cln.TargetDirectionComponent),
         typeof(cln.TimerComponent),
         typeof(cln.VelocityComponent),

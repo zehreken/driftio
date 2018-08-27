@@ -19,14 +19,14 @@ namespace cln
                 if (gameEntity.hasTargetDirection)
                 {
                     // Lerping from target to current because timer is decreasing
-                    gameEntity.ReplaceVelocity(GameConfig.MoveSpeed * Vector3.Lerp(
+                    gameEntity.ReplaceVelocity(gameEntity.speed.value * Vector3.Lerp(
                                                    GameConfig.DirectionVectors[(int) gameEntity.targetDirection.value],
                                                    GameConfig.DirectionVectors[(int) gameEntity.direction.value],
                                                    gameEntity.timer.remaining / GameConfig.RotationDuration));
                 }
                 else
                 {
-                    gameEntity.ReplaceVelocity(GameConfig.MoveSpeed *
+                    gameEntity.ReplaceVelocity(gameEntity.speed.value *
                                                GameConfig.DirectionVectors[(int) gameEntity.direction.value]);
                 }
             }
